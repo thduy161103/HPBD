@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url("theme.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.heart-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 1;
+  /* tạo khoảng cách cho nút */
+}
+
+.heart-image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heart-image.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.heart-image:hover {
+  transform: scale(1.1);
+}
+
+/* Zoom Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Style cho tiêu đề Happy Birthday */
+.birthday-header {
+  text-align: center;
+  margin: 20px 0;
+}
+.birthday-header h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3em;
+  color: #e91e63;
+}
+
+/* Nút “Thiệp nè” */
+.card-btn {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 1.4em;
+  font-family: "Great Vibes", cursive;
+  color: #fff;
+  background: #e91e63;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease;
+}
+.card-btn:hover {
+  background: #d81b60;
+}
+
+/* Nút phong cách lãng mạn */
+.romantic-btn {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.6rem;
+  color: #fff;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.romantic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+/* Modal thiệp – luôn hiển thị theo flex */
+.card-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Nội dung thiệp */
+.card-content {
+  background: #fff url("https://i.imgur.com/4HJbzEq.png") center/cover no-repeat;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card-content h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  color: #e91e63;
+  margin-bottom: 1rem;
+}
+
+/* Nội dung text */
+.card-content p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Khi thêm .show thì hiện */
+.card-modal.show {
+  display: flex;
+}
+
+/* Nút đóng */
+.card-close {
+  /* cho hiện nút x */
+  display: block; /* hoặc inline-block */
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5rem;
+  color: #e91e63;
+  cursor: pointer;
+}
+
+/* Tăng thêm khoảng cách và thu nhỏ trái tim trên điện thoại */
+@media (max-width: 576px) {
+  .heart-container {
+    width: 90%; /* container nhỏ lại */
+    max-width: 200px; /* container nhỏ lại */
+    margin-top: 5rem; /* khoảng cách với tiêu đề */
+    margin-bottom: 8rem; /* khoảng cách với nút */
+  }
+
+  .heart-image {
+    width: 35px; /* ảnh trái tim nhỏ hơn */
+    height: 35px; /* ảnh trái tim nhỏ hơn */
+  }
+
+  .card-btn {
+    margin-top: 3rem !important;
+  }
+}

@@ -1,0 +1,55 @@
+body {
+  background: url("theme.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.lovely-form {
+  max-width: 500px;
+  background: #fff;
+  border: 2px solid #e91e63;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+}
+.lovely-form h3 {
+  font-family: "Great Vibes", cursive;
+  color: #e91e63;
+  font-size: 2em;
+}
+.lovely-form .form-label {
+  font-size: 1.1em;
+  color: #555;
+}
+.lovely-form .form-control {
+  border-color: #e91e63;
+  border-radius: 6px;
+}
+.lovely-form .form-check-label {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Nút lãng mạn */
+.romantic-btn {
+  font-family: "Great Vibes", cursive;
+  font-size: 1.5rem;
+  color: #fff;
+  background: linear-gradient(45deg, #ff5f6d, #ffc371);
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.romantic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.5);
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  .lovely-form {
+    padding: 1.5rem;
+  }
+  .lovely-form h3 {
+    font-size: 1.8em;
+  }
+}

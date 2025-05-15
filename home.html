@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Photo Wall</title>
+    <!-- Thêm Google Font thư pháp -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style_home.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container text-center py-4">
+      <!-- Tiêu đề Happy Birthday Embe -->
+      <div class="birthday-header mb-4">
+        <h1>Happy Birthday Embe</h1>
+      </div>
+
+      <div class="heart-container mx-auto" id="heartContainer"></div>
+
+      <button id="cardBtn" class="card-btn btn btn-primary mt-4">
+        Mở lại Thiệp nè
+      </button>
+
+      <!-- Thiệp chúc mừng sinh nhật -->
+      <div id="cardModal" class="card-modal">
+        <div class="card-content">
+          <button type="button" class="card-close">&times;</button>
+          <h2>Chúc mừng sinh nhật bé iu !!!</h2>
+          <p>
+            Nhân ngày sinh nhật của Embe, anh chúc bé lúc nào cũng được cháy hết
+            mình với đam mê, luôn cố gắng hết sức mình trên con đường bé đã
+            chọn, và đặc biệt chúc bé mãi mãi, luôn luôn là bông hoa xinh
+            nhấttttttt, thơm nhấttttttt, duy nhấttttttt trong lòng của iu nhé.
+          </p>
+        </div>
+      </div>
+
+      <!-- Modal zoom -->
+      <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage" />
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script_home.js"></script>
+  </body>
+</html>
