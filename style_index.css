@@ -1,13 +1,24 @@
 body {
   background: url("theme.jpg") no-repeat center center fixed;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.container {
+  margin-top: 10vh;
+}
+
 .lovely-form {
   max-width: 500px;
   background: #fff;
   border: 2px solid #e91e63;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
 .lovely-form h3 {
   font-family: "Great Vibes", cursive;
