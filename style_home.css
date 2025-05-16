@@ -129,7 +129,7 @@ body {
 
 /* Nội dung thiệp */
 .card-content {
-  background: #fff url("https://i.imgur.com/4HJbzEq.png") center/cover no-repeat;
+  background: #fff url("birthday-cake-with-balloon.jpg") center/cover no-repeat;
   padding: 2.5rem;
   max-width: 500px;
   width: 90%;
@@ -144,6 +144,7 @@ body {
   font-size: 2.8rem;
   color: #e91e63;
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 /* Nội dung text */

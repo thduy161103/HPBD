@@ -3,7 +3,7 @@ document.getElementById("submitBtn").addEventListener("click", function (e) {
   const yes = document.getElementById("q1yes");
   if (yes && yes.checked) {
     alert("Ỏ. Anh yêu embe nhiều lắm");
-    window.location.href = "home.html";
+    window.location.href = "hpbd.html";
   } else {
     alert("Thật dối lòng!!!");
     window.location.href = "extra.html";
