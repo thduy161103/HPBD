@@ -70,6 +70,31 @@ body {
   cursor: pointer;
 }
 
+/* Modal nền */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Ảnh zoom: giữ tỉ lệ, max kích thước trong viewport */
+.modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-top: 20vh;
+}
+
 /* Style cho tiêu đề Happy Birthday */
 .birthday-header {
   text-align: center;
