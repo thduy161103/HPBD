@@ -32,13 +32,7 @@
       <!-- Thiệp chúc mừng sinh nhật -->
       <div id="cardModal" class="card-modal">
         <div class="card-content">
-          <button
-            type="button"
-            class="card-close"
-            style="font-size: larger; font-weight: bold"
-          >
-            &times;
-          </button>
+          <button type="button" class="card-close">&times;</button>
           <h2>Chúc mừng sinh nhật bé iu !!!</h2>
           <p>
             Nhân ngày sinh nhật của Embe, anh chúc bé lúc nào cũng được cháy hết
@@ -46,9 +40,11 @@
             chọn, và đặc biệt chúc bé mãi mãi, luôn luôn là bông hoa xinh
             nhấttttttt, thơm nhấttttttt, duy nhấttttttt trong lòng của iu nhé.
           </p>
-          <audio src="Bản ghi mới 2.m4a" autoplay hidden></audio>
         </div>
       </div>
+
+      <!-- Audio chỉ play khi mở lại thiệp -->
+      <audio id="wishesAudio" src="wishes.m4a" preload="auto" hidden></audio>
 
       <!-- Modal zoom -->
       <div id="imageModal" class="modal">
@@ -57,14 +53,29 @@
       </div>
     </div>
 
+    <!-- Happy Birthday audio -->
     <audio
-      src="happy-birthday.mp3"
       id="birthdayAudio"
-      autoplay
+      src="happy-birthday.mp3"
+      preload="auto"
       loop
-      hidden
+      playsinline
     ></audio>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Nếu vừa được đánh dấu play trên index
+        if (sessionStorage.getItem("playHappy") === "true") {
+          const a = document.getElementById("birthdayAudio");
+          a.currentTime = 0;
+          a.play().catch(() => {
+            /* iOS/Safari yêu cầu tương tác */
+          });
+          sessionStorage.removeItem("playHappy");
+        }
+      });
+    </script>
     <script src="script_home.js"></script>
   </body>
 </html>

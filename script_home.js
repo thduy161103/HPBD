@@ -65,21 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardBtn = document.getElementById("cardBtn");
   const cardModal = document.getElementById("cardModal");
   const cardClose = cardModal.querySelector(".card-close");
+  const wishesAudio = document.getElementById("wishesAudio");
 
-  // Mặc định mở thiệp ngay
+  // Mặc định đã mở thiệp 1 lần
   cardModal.classList.add("show");
 
-  // Đóng thiệp khi click X
+  // Khi click “Mở lại Thiệp nè”
+  cardBtn.addEventListener("click", () => {
+    cardModal.classList.add("show");
+    wishesAudio.currentTime = 0;
+    wishesAudio.play();
+  });
+
+  // Đóng thiệp
   cardClose.addEventListener("click", () => {
     cardModal.classList.remove("show");
   });
-
-  // Mở lại thiệp khi click nút
-  cardBtn.addEventListener("click", () => {
-    cardModal.classList.add("show");
-  });
-
-  // (tùy chọn) click ngoài cũng đóng
   cardModal.addEventListener("click", (e) => {
     if (e.target === cardModal) cardModal.classList.remove("show");
   });

@@ -64,3 +64,10 @@ body {
     font-size: 1.8em;
   }
 }
+
+#notifyToast .toast-body {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.3rem;
+  padding: 1rem;
+  text-align: center;
+}
