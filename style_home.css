@@ -12,9 +12,11 @@ body {
 
 .heart-container {
   position: relative;
+  /* fix vị trí tuyệt đối của .heart-image */
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;
   aspect-ratio: 1;
+  margin: 0 auto;
   /* tạo khoảng cách cho nút */
 }
 
@@ -216,4 +218,31 @@ body {
   .card-btn {
     margin-top: 3rem !important;
   }
+}
+
+/* start-page overlay */
+.start-page {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6) url("theme.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.start-btn {
+  font-family: "Great Vibes", cursive;
+  font-size: 2rem;
+  color: #fff;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.start-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
 }

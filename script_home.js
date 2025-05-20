@@ -15,6 +15,9 @@ function heartPath(t) {
 }
 
 async function placeImages() {
+  // 1. xóa tất cả ảnh cũ (nếu có)
+  container.innerHTML = "";
+
   for (let i = 0; i < totalImages; i++) {
     const img = document.createElement("img");
     img.src = `images/${i + 1}.jpg`;
@@ -58,26 +61,42 @@ window.onclick = (event) => {
   }
 };
 
-placeImages();
-
 // Card modal logic
 document.addEventListener("DOMContentLoaded", () => {
+  const startPage = document.getElementById("startPage");
+  const startBtn = document.getElementById("startBtn");
+  const mainContent = document.getElementById("mainContent");
+  const wishesAudio = document.getElementById("wishesAudio");
+  const birthdayAud = document.getElementById("birthdayAudio");
   const cardBtn = document.getElementById("cardBtn");
   const cardModal = document.getElementById("cardModal");
   const cardClose = cardModal.querySelector(".card-close");
-  const wishesAudio = document.getElementById("wishesAudio");
+  let hasPlaced = false;
 
-  // Mặc định đã mở thiệp 1 lần
-  cardModal.classList.add("show");
-
-  // Khi click “Mở lại Thiệp nè”
-  cardBtn.addEventListener("click", () => {
-    cardModal.classList.add("show");
+  // Khi bấm nút chào
+  startBtn.addEventListener("click", () => {
+    // play wishes.m4a
     wishesAudio.currentTime = 0;
     wishesAudio.play();
+    // play happy-birthday loop
+    birthdayAud.currentTime = 0;
+    birthdayAud.play();
+    // ẩn overlay, hiện nội dung chính
+    startPage.style.display = "none";
+    mainContent.style.display = "block";
+    // bắt đầu show hình ảnh lên heart
+    if (!hasPlaced) {
+      placeImages();
+      hasPlaced = true;
+    }
+    // mặc định mở thiệp lần đầu
+    cardModal.classList.add("show");
   });
 
-  // Đóng thiệp
+  // logic đóng/mở thiệp (giữ nguyên)
+  cardBtn.addEventListener("click", () => {
+    cardModal.classList.add("show");
+  });
   cardClose.addEventListener("click", () => {
     cardModal.classList.remove("show");
   });
